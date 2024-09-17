@@ -1,0 +1,184 @@
+.mastermind {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.game-control .color-palette {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 15px;
+	background-color: #fff;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.game-control .action-control {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 15px;
+	margin-top: 15px;
+	font-size: 20px;
+}
+
+.game-control .circle {
+	width: 50px;
+	height: 50px;
+	border-radius: 100px;
+	cursor: pointer;
+	transition: opacity 0.25s ease-in-out;
+}
+
+.game-control .circle:not(:disabled):hover {
+	opacity: 0.8;
+}
+
+.game-control .circle.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	color: #000;
+}
+
+.game-control .circle:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.game-control .circle.button.valid {
+	background-color: #000;
+	color: #fff;
+}
+
+.mastermind .bg-red {
+	background-color: #e0175a;
+}
+
+.mastermind .bg-blue {
+	background-color: #33c6f1;
+}
+
+.mastermind .bg-green {
+	background-color: #2ab77f;
+}
+
+.mastermind .bg-yellow {
+	background-color: #ecb329;
+}
+
+.board {
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-top-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 60px;
+}
+
+.board .row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	margin: 5px 0;
+	border-bottom: 2px solid #e6e4e5;
+	padding: 15px 0;
+}
+
+.board .row .index-row {
+	color: #c9c9c9;
+	font-size: 20px;
+	margin-right: 50px;
+}
+
+.board .cell {
+	border-radius: 100px;
+	padding: 25px;
+}
+
+.board .cell.empty {
+	background-color: #f2f3f8;
+}
+
+.board .indicators {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 5px;
+	width: 45px;
+	margin-left: 20px;
+}
+
+.board .indicators .indicator {
+	background-color: #fff;
+	border: 1px solid #d1d1d1;
+	border-radius: 100px;
+	padding: 8px;
+}
+
+.board .indicators .indicator.wrong-position {
+	background-color: #d3d8de;
+}
+
+.board .indicators .indicator.good-position {
+	background-color: #000;
+}
+
+.mastermind .result {
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+@media (max-width: 767px) {
+	.mastermind {
+		gap: 5px;
+	}
+
+	.board {
+		padding: 10px;
+	}
+
+	.board .row {
+		gap: 8px;
+		padding: 10px 0;
+	}
+
+	.board .row .index-row {
+		display: none;
+	}
+
+	.board .indicators {
+		margin-left: 10px;
+	}
+
+	.board .cell {
+		padding: 20px;
+	}
+
+	.game-control .color-palette,
+	.game-control .action-control {
+		padding: 10px;
+	}
+
+	.game-control .circle {
+		width: 40px;
+		height: 40px;
+	}
+
+	.board .indicators {
+		width: 35px;
+	}
+
+	.board .indicators .indicator {
+		padding: 6px;
+	}
+}
